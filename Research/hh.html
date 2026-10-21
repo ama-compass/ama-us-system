@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AMA COMPASS helps students explore programs, compare study options, review admission guidance, and send inquiries.">
+  <title>AMA COMPASS | AMA College Cavite</title>
+  <link rel="stylesheet" href="cs.css">
+  <script src="js.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#home" aria-label="AMA COMPASS home">
+    <span class="ama-mark">AMA<small>CAVITE</small></span>
+    <span class="brand-rule"></span>
+    <span class="brand-copy"><strong>AMA COMPASS</strong><small>Program Comparison and Admission Assistance</small></span>
+  </a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  <nav class="nav-links" id="navLinks">
+    <a class="nav-link active" href="#home">Home</a>
+    <a class="nav-link" href="#programs">Programs</a>
+    <a class="nav-link" href="#compare">Compare Programs</a>
+    <a class="nav-link" href="#admission">Admissions</a>
+    <a class="nav-link" href="#campuses">Campus</a>
+    <a class="nav-link" href="#resources">Resources</a>
+    <a class="nav-cta" href="#inquiry">Send Inquiry</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-shade"></div>
+    <div class="hero-content">
+      <span class="eyebrow">YOUR FUTURE STARTS HERE</span>
+      <h1>Find Your Path with<br><span>AMA COMPASS</span></h1>
+      <p>Explore programs, compare your options, and get clear guidance for your next step.</p>
+      <a class="button button-red" href="#programs">Explore Programs <span>→</span></a>
+    </div>
+    <div class="hero-caption"><span class="caption-dot"></span> Student-centered program guidance</div>
+  </section>
+
+  <section class="search-wrap" aria-label="Find a program">
+    <form class="search-bar" id="searchForm">
+      <span class="search-symbol" aria-hidden="true">⌕</span>
+      <input id="searchInput" type="search" placeholder="Search for a program or strand..." aria-label="Search for a program or strand">
+      <select id="levelFilter" aria-label="Filter education level">
+        <option value="all">All Levels</option>
+        <option value="College">College</option>
+        <option value="Senior High School">Senior High School</option>
+      </select>
+      <select id="fieldFilter" aria-label="Filter program field">
+        <option value="all">All Fields</option>
+        <option value="Technology">Technology</option>
+        <option value="Engineering">Engineering</option>
+        <option value="Business">Business</option>
+        <option value="Science">Science</option>
+        <option value="Humanities">Humanities</option>
+      </select>
+      <button class="button button-red search-button" type="submit">Search</button>
+    </form>
+  </section>
+
+  <section class="quick-links section-shell" aria-label="Main features">
+    <a class="quick-card" href="#programs"><span class="quick-icon">▤</span><span><strong>Explore Programs</strong><small>Discover college programs and SHS strands.</small></span><b>→</b></a>
+    <a class="quick-card" href="#compare"><span class="quick-icon">⚖</span><span><strong>Compare Programs</strong><small>Review core subjects and career paths.</small></span><b>→</b></a>
+    <a class="quick-card" href="#admission"><span class="quick-icon">▣</span><span><strong>Admission Guide</strong><small>Learn the general steps for applying.</small></span><b>→</b></a>
+    <a class="quick-card" href="#inquiry"><span class="quick-icon">✉</span><span><strong>Inquiry System</strong><small>Send your questions to the school.</small></span><b>→</b></a>
+  </section>
+
+  <section class="guide-section section-shell">
+    <div class="guide-intro">
+      <span class="eyebrow">START WITH CONFIDENCE</span>
+      <h2>Your Guide to Choosing<br>a Program</h2>
+      <p>Take the next step with confidence. Follow these three simple steps.</p>
+    </div>
+    <div class="guide-steps">
+      <article class="step-card"><span class="step-number">01</span><span class="step-symbol">◎</span><h3>Know Your Interests</h3><p>Think about what you enjoy and what you are good at.</p></article>
+      <span class="step-arrow">›</span>
+      <article class="step-card"><span class="step-number">02</span><span class="step-symbol">⚖</span><h3>Understand Your Options</h3><p>Compare program subjects, skills, and possible career paths.</p></article>
+      <span class="step-arrow">›</span>
+      <article class="step-card"><span class="step-number">03</span><span class="step-symbol">✓</span><h3>Make Your Decision</h3><p>Choose a path that matches your goals and interests.</p></article>
+    </div>
+  </section>
+
+  <section class="programs-section section-shell" id="programs">
+    <div class="section-heading"><div><span class="eyebrow">FIND YOUR DIRECTION</span><h2>Explore Programs</h2><p>Browse options and open a program to learn more.</p></div><span class="count-pill" id="resultCount">12 programs</span></div>
+    <div class="program-grid" id="programGrid" aria-live="polite"></div>
+    <p class="empty-state" id="emptyState" hidden>No matching programs found. Try changing your search or filters.</p>
+  </section>
+
+  <section class="compare-section" id="compare">
+    <div class="section-shell">
+      <div class="section-heading"><div><span class="eyebrow">MAKE AN INFORMED CHOICE</span><h2>Program Comparison</h2><p>Select two different programs to compare core subjects and possible career paths.</p></div></div>
+      <div class="compare-panel">
+        <div class="program-selectors">
+          <div class="form-field"><label for="compareProgram1">Select Program 1</label><select id="compareProgram1"><option value="">Choose first program</option></select></div>
+          <span class="comparison-arrow" aria-hidden="true">➜</span>
+          <div class="form-field"><label for="compareProgram2">Select Program 2</label><select id="compareProgram2"><option value="">Choose second program</option></select></div>
+        </div>
+        <div class="table-scroll" id="comparisonOutput" aria-live="polite"><p class="compare-placeholder">Select two programs to view the comparison.</p></div>
+        <p class="compare-note">Comparison information is for general guidance. Confirm official curriculum details with AMA College Cavite.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="admission-section section-shell" id="admission">
+    <div class="section-heading"><div><span class="eyebrow">YOUR NEXT STEP</span><h2>Admission Guide</h2><p>Use these general steps as a starting point. Requirements may differ by applicant type.</p></div></div>
+    <div class="admission-layout">
+      <div class="admission-tabs">
+        <button class="admission-tab active" type="button" data-admission="new">New Student</button>
+        <button class="admission-tab" type="button" data-admission="transferee">Transferee</button>
+        <button class="admission-tab" type="button" data-admission="shs">Senior High School</button>
+        <button class="admission-tab" type="button" data-admission="international">International Applicant</button>
+      </div>
+      <article class="admission-content" id="admissionContent">
+        <h3>New Student: General Guide</h3>
+        <ol><li>Choose your preferred program.</li><li>Contact the admissions office for the current list of requirements.</li><li>Prepare and submit the documents requested by the school.</li><li>Confirm application steps, fees, deadlines, and enrollment instructions with authorized personnel.</li></ol>
+      </article>
+    </div>
+    <div class="notice"><strong>Please note:</strong> This is a student-project prototype, not an official admissions checklist. Verify all requirements, deadlines, fees, and program availability directly with AMA College Cavite.</div>
+  </section>
+
+  <section class="campus-section" id="campuses">
+    <div class="section-shell campus-layout">
+      <div class="campus-photo"><img src="ama-cavite.jpg" alt="AMA College Cavite campus building"></div>
+      <div class="campus-copy"><span class="eyebrow">GET TO KNOW THE CAMPUS</span><h2>AMA College Cavite</h2><p>Explore program options and prepare your questions before contacting the school. For official campus details, office hours, and directions, confirm information with AMA College Cavite.</p><a class="button button-outline" href="#inquiry">Ask a Question →</a></div>
+    </div>
+  </section>
+
+  <section class="resources-section section-shell" id="resources">
+    <div class="section-heading"><div><span class="eyebrow">HELPFUL INFORMATION</span><h2>Student Resources</h2><p>Quick starting points for common questions from prospective students.</p></div></div>
+    <div class="resource-grid">
+      <details class="resource-card"><summary>What program should I choose?</summary><p>Start with your interests, preferred subjects, strengths, and future goals. Use the program comparison tool, then ask the school about the official curriculum.</p></details>
+      <details class="resource-card"><summary>Where can I confirm admission requirements?</summary><p>Contact the admissions office directly. Requirements may vary for new students, transferees, SHS applicants, and international applicants.</p></details>
+      <details class="resource-card"><summary>Can I ask about a program before applying?</summary><p>Yes. Use the inquiry form below to prepare a question. This prototype does not send messages until a backend is connected.</p></details>
+      <details class="resource-card"><summary>Are tuition fees and scholarships listed here?</summary><p>Fees, scholarships, and eligibility can change. Confirm current information and deadlines with the school before making a decision.</p></details>
+    </div>
+    <div class="announcement-note"><strong>Announcements:</strong> Official announcements and scholarship updates are not connected in this prototype. Add verified school announcements here when an approved information source is available.</div>
+  </section>
+
+  <section class="inquiry-section" id="inquiry">
+    <div class="section-shell inquiry-layout">
+      <div class="inquiry-copy"><span class="eyebrow">WE'RE HERE TO HELP</span><h2>Have Questions?<br>Send an Inquiry.</h2><p>Tell us what you would like to know about programs or admissions. Your request will be validated in this demo, but it will not be sent or stored until a backend is connected.</p><div class="inquiry-prompt"><span>✦</span><p>Tip: Include your applicant type and program of interest so school personnel can better understand your question.</p></div></div>
+      <form class="inquiry-form" id="inquiryForm">
+        <h3>Inquiry System</h3><p class="form-description">Fields marked with * are required.</p>
+        <div class="form-field"><label for="studentName">Name *</label><input id="studentName" name="studentName" type="text" placeholder="Enter your name" required maxlength="100"></div>
+        <div class="form-field"><label for="studentEmail">Email *</label><input id="studentEmail" name="studentEmail" type="email" placeholder="you@example.com" required maxlength="150"></div>
+        <div class="form-field"><label for="applicantType">Applicant Type *</label><select id="applicantType" name="applicantType" required><option value="">Choose applicant type</option><option>Incoming College Student</option><option>Transferee</option><option>Senior High School Student</option><option>Parent or Guardian</option><option>International Applicant</option><option>Other</option></select></div>
+        <div class="form-field"><label for="inquiryProgram">Program of Interest</label><select id="inquiryProgram" name="inquiryProgram"><option value="">Not yet decided</option></select></div>
+        <div class="form-field"><label for="message">Message *</label><textarea id="message" name="message" rows="4" placeholder="Write your question here..." required maxlength="1500"></textarea></div>
+        <button class="button button-red submit-button" type="submit">Submit Inquiry →</button>
+        <p class="form-status" id="formStatus" role="status">Demo only: no inquiry will be sent or saved.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main"><div><strong class="footer-logo">AMA COMPASS</strong><p>Program Comparison and Admission Assistance</p></div><div class="footer-links"><a href="#programs">Programs</a><a href="#compare">Compare</a><a href="#admission">Admissions</a><a href="#resources">FAQs</a><a href="#inquiry">Contact</a></div></div>
+  <div class="footer-bottom"><span>AMA COMPASS · Student-centered guidance</span><span>Student project prototype · <span id="currentYear"></span></span></div>
+</footer>
+
+<dialog id="programDialog" class="program-dialog"><button class="dialog-close" id="closeDialog" aria-label="Close details">×</button><div id="dialogContent"></div></dialog>
+</body>
+</html>
